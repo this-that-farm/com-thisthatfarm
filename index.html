@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.4/dist/cosmo/bootstrap.min.css" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12/css/all.min.css" crossorigin="anonymous">
+
+	<title>This &amp; That Farm</title>
+</head>
+
+<body>
+	<header class="mb-3">
+		<div class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<div class="container">
+				<a href="/" class="navbar-brand">This &amp; That Farm</a>
+				<button class="navbar-toggler" type="button" data-target="#nav-main" data-toggle="collapse">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<nav id="nav-main" class="navbar-collapse collapse">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+						<li class="nav-item">
+							<a href="https://www.facebook.com/WeGotThisAndThatFarm/photos/"
+								target="_blank" rel="noreferrer" class="nav-link">
+								Gallery
+								<i class="fas fa-external-link-alt fa-xs"></i>
+							</a>
+						</li>
+					</ul>
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a href="tel:4022705543" class="nav-link">
+								<i class="fas fa-mobile-alt fa-fw"></i>
+								402.270.5543
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="mailto:contact@thisthatfarm.com" class="nav-link">
+								<i class="fas fa-envelope fa-fw"></i>
+								contact@thisthatfarm.com
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="https://www.facebook.com/WeGotThisAndThatFarm/"
+								target="_blank" rel="noreferrer" class="nav-link">
+								<i class="fab fa-facebook fa-fw"></i>
+								@WeGotThisAndThatFarm
+								<i class="fas fa-external-link-alt fa-xs"></i>
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+	<main class="container mb-3">
+	</main>
+	<footer class="text-center mb-3">
+		This &amp; That Farm &copy; 2020
+	</footer>
+
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jquery-csv@1.0/src/jquery.csv.min.js" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/lodash@4.17/lodash.min.js" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+	<script>
+		_.templateSettings = {
+			variable: "data", // avoid "with"
+			evaluate: /\{\%(.+?)\%\}/g, // evalutated delimiter: {% %}
+			escape: /\{\{(.+?)\}\}/g, // escape delimiter: {{ }}
+			interpolate: /\{\|(.+?)\|\}/g // unescaped delimiter: {| |}
+		};
+	</script>
+	<script>
+		(function () {
+			"use strict";
+
+			var DOM = {},
+				Bundle = {},
+				Template = {};
+
+			jQuery(function () {
+
+			});
+		})();
+	</script>
+</body>
+
+
+</html>
