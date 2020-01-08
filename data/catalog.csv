@@ -1,38 +1,38 @@
 uName,uGender,uBreed,uDescription,uPrice,uIsAvailable
-Buckling,Billy,Boer,,400,1
-Little Bill,Billy,Boer,,400,1
-Male,Billy,Boer,,150,1
-Chunk,Billy,Boer,,0,0
-Boy 1,Billy,Fainting Boer,,150,1
-Boy2,Billy,Fainting Boer,,150,1
-Ricky,Billy,Fainting Boer,,150,1
-WarFace,Billy,Fainting Boer,,150,1
-Boo,Billy,Fainting,,0,0
-Moe,Billy,Fainting,,0,0
-73,Doe,Boer,,200,1
-Black Foot,Doe,Boer,,200,1
-Little Girl,Doe,Boer,,200,1
-No Horns,Doe,Boer,,150,1
-43,Doe,Boer,,200,1
-118,Doe,Boer,,0,0
-483,Doe,Boer,,0,0
-486,Doe,Boer,,0,0
-488,Doe,Boer,,0,0
-489,Doe,Boer,,0,0
-Black Boer,Doe,Boer,,0,0
-Chocolate,Doe,Boer,,200,0
-Little Shit,Doe,Boer,,0,0
-Mouse,Doe,Boer,,0,0
-Red Boer,Doe,Boer,,0,0
-Red Headed Girl,Doe,Boer,,0,0
-Oreo,Doe,Dairy,,0,0
-Fainter,Doe,Fainting,,200,1
-Lucy,Doe,Fainting Boer,,150,1
-Black Fainting,Doe,Fainting,,0,0
-Boo's Girl,Doe,Fainting,,175,0
-Boo's Mom,Doe,Fainting,,200,0
-Stucky,Doe,Fainting,,0,0
-KaiKai,Doe,Fainting Boer,,0,0
-Tiny Girl,Doe,Fainting Boer,,0,0
-Show Goat,Doe,Spotted Boer,,0,0
-Male,Wether,Fainting Boer,,150,1
+Buckling,Billy,Boer,,400,TRUE
+Little Bill,Billy,Boer,,400,TRUE
+Male,Billy,Boer,,150,TRUE
+Chunk,Billy,Boer,,0,FALSE
+Boy 1,Billy,Fainting Boer,,150,TRUE
+Boy2,Billy,Fainting Boer,,150,TRUE
+Ricky,Billy,Fainting Boer,,150,TRUE
+WarFace,Billy,Fainting Boer,,150,TRUE
+Boo,Billy,Fainting,,0,FALSE
+Moe,Billy,Fainting,,0,FALSE
+73,Doe,Boer,,200,TRUE
+Black Foot,Doe,Boer,,200,TRUE
+Little Girl,Doe,Boer,,200,TRUE
+No Horns,Doe,Boer,,150,TRUE
+43,Doe,Boer,,200,TRUE
+118,Doe,Boer,,0,FALSE
+483,Doe,Boer,,0,FALSE
+486,Doe,Boer,,0,FALSE
+488,Doe,Boer,,0,FALSE
+489,Doe,Boer,,0,FALSE
+Black Boer,Doe,Boer,,0,FALSE
+Chocolate,Doe,Boer,,200,FALSE
+Little Shit,Doe,Boer,,0,FALSE
+Mouse,Doe,Boer,,0,FALSE
+Red Boer,Doe,Boer,,0,FALSE
+Red Headed Girl,Doe,Boer,,0,FALSE
+Oreo,Doe,Dairy,,0,FALSE
+Fainter,Doe,Fainting,,200,TRUE
+Lucy,Doe,Fainting Boer,,150,TRUE
+Black Fainting,Doe,Fainting,,0,FALSE
+Boo's Girl,Doe,Fainting,,175,FALSE
+Boo's Mom,Doe,Fainting,,200,FALSE
+Stucky,Doe,Fainting,,0,FALSE
+KaiKai,Doe,Fainting Boer,,0,FALSE
+Tiny Girl,Doe,Fainting Boer,,0,FALSE
+Show Goat,Doe,Spotted Boer,,0,FALSE
+Male,Wether,Fainting Boer,,150,TRUE
