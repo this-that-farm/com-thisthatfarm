@@ -5,15 +5,15 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.4/dist/cosmo/bootstrap.min.css" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.4/dist/pulse/bootstrap.min.css" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12/css/all.min.css" crossorigin="anonymous">
 
 	<title>This &amp; That Farm</title>
 </head>
 
-<body class="text-light bg-dark">
+<body>
 	<header class="mb-3">
-		<div class="navbar navbar-expand-lg navbar-dark" style="background-color:#27292A;">
+		<div class="navbar navbar-expand-lg navbar-dark bg-dark">
 			<div class="container">
 				<a href="/" class="navbar-brand">This &amp; That Farm</a>
 				<button class="navbar-toggler" type="button" data-target="#nav-main" data-toggle="collapse">
@@ -35,8 +35,8 @@
 		</div>
 	</header>
 	<section id="Home" class="container mb-3">
-		<h1 class="border-bottom border-info mb-3">Welcome to the Farm</h1>
 		<div class="jumbotron text-center" style="background:url(/assets/hero-image.jpg) center;background-size:cover;">
+		<h1 class="border-bottom border-primary mb-3">Welcome to the Farm</h1>
 			<div class="card text-light bg-dark d-inline-block">
 				<div class="card-body lead text-left">
 					<p>We are a small, family-run hobby farm located near Columbus, Nebraska.</p>
@@ -44,17 +44,17 @@
 				</div>
 				<div class="list-group list-group-flush">
 					<a href="tel:4022705543"
-						class="list-group-item list-group-item-action text-light bg-info border-info">
+						class="list-group-item list-group-item-action bg-primary h4">
 						<i class="fas fa-phone fa-fw"></i>
 						402.270.5543
 					</a>
 					<a href="mailto:contact@thisthatfarm.com"
-						class="list-group-item list-group-item-action text-light bg-dark">
+						class="list-group-item list-group-item-action">
 						<i class="fas fa-envelope fa-fw"></i>
 						contact@thisthatfarm.com
 					</a>
 					<a href="https://www.facebook.com/WeGotThisAndThatFarm/"
-						rel="noreferrer" target="_blank" class="list-group-item list-group-item-action text-light bg-dark">
+						rel="noreferrer" target="_blank" class="list-group-item list-group-item-action">
 						<i class="fab fa-facebook fa-fw"></i>
 						@WeGotThisAndThatFarm
 						<i class="fas fa-external-link-alt fa-xs"></i>
@@ -63,9 +63,11 @@
 			</div>
 		</div>
 	</section>
+	<main id="Herd" class="container mb-3">
+		<div id="ContainerCatalog" class="row"></div>
 	</main>
 	<footer class="text-center mb-3">
-		<span class="border-top border-info pt-2">
+		<span class="border-top border-primary pt-2">
 			This &amp; That Farm &copy; 2020 |
 			All rights reserved.
 		</span>
@@ -98,6 +100,5 @@
 		})();
 	</script>
 </body>
-
 
 </html>
