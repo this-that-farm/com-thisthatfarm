@@ -79,6 +79,49 @@
 		</span>
 	</footer>
 
+	<script id="TemplateCatalog" type="text/template">
+	{% if (data.catalog.length === 0) { %}
+	<div class="col-12">
+		<div class="alert alert-dark mb-3">
+			No data found...
+		</div>
+	</div>
+	{% } %}
+	{% _.forEach(data.catalog, function (obj) { %}
+	<div class="col-12 col-md-6 mb-3">
+		<div class="card h-100">
+			<div class="embed-responsive embed-responsive-16by9">
+				<div class="embed-responsive-item text-center bg-dark">
+					<img src="/assets/catalog/{{ obj.uThumbnail }}" class="h-100">
+				</div>
+			</div>
+			<div class="card-body">
+				<div class="row">
+					<div class="col-8">
+						<h2 class="h3">{{ obj.uName }}</h2>
+						<span class="h5 mb-0">
+							<span class="badge badge-secondary mr-2">{{ obj.uGender }}</span>
+							<span class="badge badge-secondary">{{ obj.uBreed }}</span>
+						</span>
+					</div>
+					<div class="col-4 text-right">
+						<div class="text-primary h5 mb-3">${{ obj.uPrice.toFixed(2) }}</div>
+						<span class="h5 mb-0">
+							<a href="tel:4022705543" class="text-muted mr-2">
+								<i class="fas fa-phone fa-fw"></i>
+							</a>
+							<a href="mailto:contact@thisthatfarm.com" class="text-muted">
+								<i class="fas fa-envelope fa-fw"></i>
+							</a>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	{% }); %}
+	</script>
+
 	<script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/jquery-csv@1.0/src/jquery.csv.min.js" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/lodash@4.17/lodash.min.js" crossorigin="anonymous"></script>
@@ -100,8 +143,25 @@
 				Bundle = {},
 				Template = {};
 
-			jQuery(function () {
+			DOM.catalog = jQuery("#ContainerCatalog");
 
+			Bundle.catalog = [];
+
+			jQuery(function () {
+				Template.catalog = _.template(jQuery("#TemplateCatalog").html());
+
+				jQuery.get("/data/catalog.csv", function (data) {
+					Bundle.catalog = _.chain(jQuery.csv.toObjects(data))
+						.forEach(function (obj) {
+							obj.uPrice = parseFloat(obj.uPrice);
+							obj.uIsAvailable = "TRUE" === obj.uIsAvailable;
+						})
+						.filter("uIsAvailable")
+						.sortBy([ "uGender", "uBreed", "uName" ])
+						.value();
+
+					DOM.catalog.html(Template.catalog({ catalog: Bundle.catalog }));
+				});
 			});
 		})();
 	</script>
