@@ -6,7 +6,7 @@ FOR /R %%a IN (*.jpg) DO (
 	ECHO %%~a...
 
 	magick convert "%%~a" ^
-		-resize 500x500^> ^
+		-resize 600x600^> ^
 		-strip ^
 		-depth 8 ^
 		-density 72 ^
