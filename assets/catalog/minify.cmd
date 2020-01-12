@@ -3,8 +3,10 @@
 ECHO Minifying JPG images...
 
 FOR /R %%a IN (*.jpg) DO (
+	ECHO %%~a...
+
 	magick convert "%%~a" ^
-		-resize 900x900^> ^
+		-resize 500x500^> ^
 		-strip ^
 		-depth 8 ^
 		-density 72 ^
