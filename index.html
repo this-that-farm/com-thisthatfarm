@@ -81,13 +81,23 @@
 	</footer>
 
 	<script id="TemplateCatalog" type="text/template">
+	<div class="col-12 text-left text-md-center">
 	{% if (data.catalog.length === 0) { %}
-	<div class="col-12">
-		<div class="alert alert-dark mb-3">
-			No data found...
+		<div class="alert alert-primary">
+			<div class="text-center">
+				<i class="far fa-frown fa-8x"></i>
+				<h2 class="my-3">No Records Found</h2>
+			</div>
+			<p>Sorry, we don't have anything listed right now.</p>
+			<p class="mb-0">For upcoming availability, please call
+				<a href="tel:4022705543">402.270.5543</a>
+				or check back later.</p>
 		</div>
-	</div>
+	{% } else { %}
+		<div class="alert alert-primary mb-3 lead">Our commercial goat herd is current on all shots and deworming.</div>
 	{% } %}
+	</div>
+
 	{% _.forEach(data.catalog, function (obj) { %}
 	<div class="col-12 col-md-6 mb-3">
 		<div class="card h-100">
