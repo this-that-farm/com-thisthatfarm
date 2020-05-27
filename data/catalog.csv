@@ -2,11 +2,7 @@ uName,uGender,uBreed,uDescription,uPrice,uThumbnail,uIsAvailable
 Buckling,Billy,Boer,,400,buckling.jpg,TRUE
 Chunk,Billy,Boer,,0,placeholder.png,FALSE
 Little Bill,Billy,Boer,,400,little-bill.jpg,TRUE
-118's Boy,Billy,Boer|Fainting,,150,118-boy.jpg,TRUE
-Ricky,Billy,Boer|Fainting,,150,ricky.jpg,TRUE
-WarFace,Billy,Boer|Fainting,,150,warface.jpg,TRUE
 Boo,Billy,Fainting,,0,placeholder.png,FALSE
-Moe,Billy,Fainting,,150,moe.jpg,TRUE
 43,Doe,Boer,,0,placeholder.png,FALSE
 73,Doe,Boer,,0,placeholder.png,FALSE
 118,Doe,Boer,,200,118.jpg,FALSE
@@ -31,5 +27,3 @@ Black Fainting,Doe,Fainting,,150,black-fainting.jpg,TRUE
 Boo's Girl,Doe,Fainting,,150,boo-girl.jpg,FALSE
 Stucky,Doe,Fainting,,150,stucky.jpg,TRUE
 Show Goat,Doe,Spotted Boer,,0,placeholder.png,FALSE
-Lover Boy 1,Wether,Boer|Fainting,,150,lover-boy-1.jpg,TRUE
-Lover Boy 2,Wether,Boer|Fainting,,150,lover-boy-2.jpg,TRUE
