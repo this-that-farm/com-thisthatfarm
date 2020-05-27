@@ -113,9 +113,9 @@
 						<h2 class="h3">{{ obj.uName }}</h2>
 						<span class="h5 mb-0">
 							<span class="badge badge-secondary mr-2">{{ obj.uGender }}</span>
-{% _.forEach(obj.uBreed.split("|"), function (uBreed) { %}
+							{% _.forEach(obj.uBreed.split("|"), function (uBreed) { %}
 							<span class="badge badge-secondary mr-2">{{ uBreed }}</span>
-{% }); %}
+							{% }); %}
 						</span>
 					</div>
 					<div class="col-4 text-right">
