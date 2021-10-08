@@ -12,7 +12,7 @@
 	<title>This &amp; That Farm</title>
 </head>
 
-<body class="bg-light">
+<body>
 	<header class="mb-3">
 		<div class="navbar navbar-expand-lg navbar-dark bg-dark">
 			<div class="container">
@@ -37,7 +37,7 @@
 			</div>
 		</div>
 	</header>
-	<section id="Home" class="container mb-3">
+	<section class="container mb-3">
 		<h1 class="border-bottom border-primary mb-3">Welcome to the Farm</h1>
 		<div class="text-center p-2 p-sm-5 mb-0" style="background:url(/assets/hero-image.jpg) center;background-size:cover;">
 			<div class="card text-light bg-dark d-inline-block">
@@ -83,19 +83,19 @@
 
 	<script id="TemplateCatalog" type="text/template">
 	<div class="col-12 text-left text-md-center">
+		<div class="alert alert-primary mb-3 lead">Our commercial goat herd is dewormed and current on all shots.</div>
 	{% if (data.catalog.length === 0) { %}
 		<div class="alert alert-primary">
 			<div class="text-center">
-				<i class="far fa-frown fa-8x"></i>
-				<h2 class="my-3">No Records Found</h2>
+				<i class="fas fa-address-card fa-6x fa-fw"></i>
+				<h2 class="my-3">Please Contact Us</h2>
 			</div>
-			<p>Sorry, we don't have anything listed right now.</p>
-			<p class="mb-0">For upcoming availability, please call
-				<a href="tel:4022705543">402.270.5543</a>
-				or check back later.</p>
+			<p>Sorry! None of our goats are listed online at this time.</p>
+			<p class="mb-0">
+				Please call or text <a href="tel:4022705543">402.270.5543</a>
+				to request information about our goats.
+			</p>
 		</div>
-	{% } else { %}
-		<div class="alert alert-primary mb-3 lead">Our commercial goat herd is dewormed and current on all shots.</div>
 	{% } %}
 	</div>
 
