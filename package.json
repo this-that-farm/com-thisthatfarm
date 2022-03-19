@@ -1,5 +1,6 @@
 {
   "name": "com-thisthatfarm",
+  "homepage": "thisthatfarm.com",
   "version": "0.1.0",
   "private": true,
   "scripts": {
