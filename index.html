@@ -109,8 +109,8 @@
 	{% _.forEach(data.catalog, function (obj) { %}
 	<div class="col-12 col-md-6 mb-3">
 		<div class="card h-100">
-			<div class="embed-responsive embed-responsive-16by9">
-				<div class="embed-responsive-item text-center bg-dark">
+			<div class="ratio ratio-16x9">
+				<div class="text-center bg-dark">
 					<img src="/assets/catalog/{{ obj.uThumbnail }}" class="h-100">
 				</div>
 			</div>
@@ -119,20 +119,20 @@
 					<div class="col-8">
 						<h2 class="h3">{{ obj.uName }}</h2>
 						<span class="h5 mb-0">
-							<span class="badge badge-secondary mr-2">{{ obj.uGender }}</span>
+							<span class="badge bg-secondary me-2">{{ obj.uGender }}</span>
 							{% _.forEach(obj.uBreed.split("|"), function (uBreed) { %}
-							<span class="badge badge-secondary mr-2">{{ uBreed }}</span>
+							<span class="badge bg-secondary me-2">{{ uBreed }}</span>
 							{% }); %}
 						</span>
 					</div>
-					<div class="col-4 text-right">
+					<div class="col-4 text-end">
 						<div class="text-primary h5 mb-3 d-none">${{ obj.uPrice.toFixed(2) }}</div>
-						<span class="h5 mb-0">
-							<a href="tel:4022705543" class="text-muted mr-2">
-								<i class="fas fa-phone fa-fw"></i>
+						<span class="fs-5 mb-0">
+							<a href="tel:4022705543" class="text-muted text-decoration-none me-2">
+								<i class="fas fa-phone"></i>
 							</a>
 							<a href="mailto:contact@thisthatfarm.com?subject=Infomation Request&body=I would like to know more about {{ obj.uName }}."
-								class="text-muted">
+								class="text-muted text-decoration-none">
 								<i class="fas fa-envelope fa-fw"></i>
 							</a>
 						</span>
