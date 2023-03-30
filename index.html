@@ -144,9 +144,9 @@
 	{% }); %}
 	</script>
 
-	<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/jquery-csv@1.0.21/src/jquery.csv.min.js" integrity="sha256-zGo0JbZ5Sn6wU76MyVL0TrUZUq5GLXaFnMQCe/hSwVI=" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js" integrity="sha256-qXBd/EfAdjOA2FGrGAG+b3YBn2tn5A6bhz+LSgYD96k=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/axios@1.3.4/dist/axios.min.js" integrity="sha256-EIyuZ2Lbxr6vgKrEt8W2waS6D3ReLf9aeoYPZ/maJPI=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js" integrity="sha256-uOhwxdKyl3LxDJ+pppPIuJaqyFQO1nAePMYwTGg/69s=" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha256-lSABj6XYH05NydBq+1dvkMu6uiCc/MbLYOFGRkf3iQs=" crossorigin="anonymous"></script>
 	<script>
 		_.templateSettings = {
@@ -157,32 +157,49 @@
 		};
 	</script>
 	<script>
-		(function () {
+		(() => {
 			"use strict";
 
 			var DOM = {},
 				Bundle = {},
 				Template = {};
 
-			DOM.catalog = jQuery("#ContainerCatalog");
+			DOM.catalog = document.getElementById("ContainerCatalog");
 
 			Bundle.catalog = [];
 
-			jQuery(function () {
-				Template.catalog = _.template(jQuery("#TemplateCatalog").html());
+			document.addEventListener("DOMContentLoaded", () => {
+				Template.catalog = _.template(document.getElementById("TemplateCatalog").innerHTML);
 
-				jQuery.get("/data/catalog.csv", function (data) {
-					Bundle.catalog = _.chain(jQuery.csv.toObjects(data))
-						.forEach(function (obj) {
-							obj.uPrice = parseFloat(obj.uPrice);
-							obj.uIsAvailable = "TRUE" === obj.uIsAvailable;
-						})
-						.filter("uIsAvailable")
-						.sortBy([ "uGender", "uBreed", "uName" ])
-						.value();
+				axios
+					.get("/data/catalog.csv")
+					.then((response) => {
+						if (!response?.data) return null;
 
-					DOM.catalog.html(Template.catalog({ catalog: Bundle.catalog }));
-				});
+						return Papa.parse(response.data, {
+							skipEmptyLines: "greedy",
+							header: true,
+						});
+					})
+					.then((parser) => {
+						if (parser?.errors?.length) return null;
+
+						Bundle.catalog = parser.data
+							.map((rec) => {
+								rec.uIsAvailable = "TRUE" === rec.uIsAvailable;
+								rec.uPrice = parseFloat(rec.uPrice);
+								return rec;
+							})
+							.filter((rec) => rec.uIsAvailable)
+							.sort((a, b) => {
+								return a.uGender.localeCompare(b.uGender)
+									|| a.uBreed.localeCompare(b.uBreed)
+									|| a.uName.localeCompare(b.uName);
+							});
+					})
+					.finally(function () {
+						DOM.catalog.innerHTML = Template.catalog({ catalog: Bundle.catalog });
+					});
 			});
 		})();
 	</script>
