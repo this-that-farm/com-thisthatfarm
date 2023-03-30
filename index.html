@@ -13,164 +13,164 @@
 </head>
 
 <body>
-	<header class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
-		<div class="container">
-			<a href="/" class="navbar-brand">
-				<img src="/assets/brand-dark.png" alt="This &amp; That Farm, LLC.">
-			</a>
-			<button class="navbar-toggler" type="button" data-bs-target="#nav-main" data-bs-toggle="collapse">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<nav id="nav-main" class="navbar-collapse collapse">
-				<ul class="navbar-nav lead">
-					<li class="nav-item"><a href="/" class="nav-link">Home</a></li>
-					<li class="nav-item">
-						<a href="https://www.facebook.com/WeGotThisAndThatFarm/photos/"
-							target="_blank" rel="noreferrer" class="nav-link">
-							Gallery
-							<i class="fas fa-external-link-alt fa-xs"></i>
-						</a>
-					</li>
-				</ul>
-			</nav>
-		</div>
-	</header>
-	<section class="container mb-3">
-		<h1 class="border-bottom border-primary mb-3">Welcome to the Farm</h1>
-		<div class="text-center p-2 p-sm-5 mb-0" style="background:url(/assets/hero-image.jpg) center;background-size:cover;">
-			<div class="card text-light bg-dark d-inline-block">
-				<div class="card-body lead text-left">
-					<p class="card-text">We are a small, family-run hobby farm located near Columbus, Nebraska.</p>
-					<p class="card-text">Here on our farm, you can find a little bit of <span class="font-italic">This &amp; That</span>.</p>
-				</div>
-				<div class="list-group list-group-flush">
-					<a href="tel:4022705543"
-						class="list-group-item list-group-item-action bg-primary fs-4">
-						<section class="row align-items-center">
-							<i class="fas fa-square-phone fa-fw col-2"></i>
-							<span class="col">402.270.5543</span>
-						</section>
-					</a>
-					<a href="mailto:contact@thisthatfarm.com"
-						class="list-group-item list-group-item-action">
-						<section class="row align-items-center">
-							<i class="fas fa-square-envelope fa-fw col-2"></i>
-							<span class="col">contact@thisthatfarm.com</span>
-						</section>
-					</a>
-					<a href="https://www.facebook.com/WeGotThisAndThatFarm/"
-						rel="noreferrer" target="_blank" class="list-group-item list-group-item-action">
-						<section class="row align-items-center">
-							<i class="fab fa-square-facebook fa-fw col-2"></i>
-							<span class="col">
-								@WeGotThisAndThatFarm
+	<section id="App">
+		<header class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+			<div class="container">
+				<a href="/" class="navbar-brand">
+					<img src="/assets/brand-dark.png" alt="This &amp; That Farm, LLC.">
+				</a>
+				<button class="navbar-toggler" type="button" data-bs-target="#nav-main" data-bs-toggle="collapse">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<nav id="nav-main" class="navbar-collapse collapse">
+					<ul class="navbar-nav lead">
+						<li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+						<li class="nav-item">
+							<a href="https://www.facebook.com/WeGotThisAndThatFarm/photos/"
+								target="_blank" rel="noreferrer" class="nav-link">
+								Gallery
 								<i class="fas fa-external-link-alt fa-xs"></i>
-							</span>
-						</section>
-					</a>
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<section class="container mb-3">
+			<h1 class="border-bottom border-primary mb-3">Welcome to the Farm</h1>
+			<div class="text-center p-2 p-sm-5 mb-0" style="background:url(/assets/hero-image.jpg) center;background-size:cover;">
+				<div class="card text-light bg-dark d-inline-block">
+					<div class="card-body lead text-start">
+						<p class="card-text">We are a small, family-run hobby farm located near Columbus, Nebraska.</p>
+						<p class="card-text">Here on our farm, you can find a little bit of <span class="font-italic">This &amp; That</span>.</p>
+					</div>
+					<div class="list-group list-group-flush">
+						<a href="tel:4022705543"
+							class="list-group-item list-group-item-action bg-primary fs-4">
+							<section class="row align-items-center">
+								<i class="fas fa-square-phone fa-fw col-2"></i>
+								<span class="col">402.270.5543</span>
+							</section>
+						</a>
+						<a href="mailto:contact@thisthatfarm.com"
+							class="list-group-item list-group-item-action">
+							<section class="row align-items-center">
+								<i class="fas fa-square-envelope fa-fw col-2"></i>
+								<span class="col">contact@thisthatfarm.com</span>
+							</section>
+						</a>
+						<a href="https://www.facebook.com/WeGotThisAndThatFarm/"
+							rel="noreferrer" target="_blank" class="list-group-item list-group-item-action">
+							<section class="row align-items-center">
+								<i class="fab fa-square-facebook fa-fw col-2"></i>
+								<span class="col">
+									@WeGotThisAndThatFarm
+									<i class="fas fa-external-link-alt fa-xs"></i>
+								</span>
+							</section>
+						</a>
+					</div>
 				</div>
 			</div>
-		</div>
+		</section>
+		<main id="Goats" class="container">
+			<h2 class="border-bottom border-primary mb-3">Goats</h2>
+			<div class="alert alert-primary mb-3 lead">Our commercial goat herd is dewormed and current on all shots.</div>
+			<template v-if="isLoading">
+				<div class="text-center mb-3 py-3">
+					<i class="fas fa-circle-notch fa-spin fa-4x text-secondary" role="status"></i>
+				</div>
+			</template>
+			<template v-else>
+				<template v-if="!catalog?.length">
+					<div class="alert alert-primary text-center">
+						<div class="text-center">
+							<i class="far fa-comments fa-6x fa-fw"></i>
+							<h2 class="my-3">Please Contact Us</h2>
+						</div>
+						<p>Sorry! None of our goats are listed online at this time.</p>
+						<p class="mb-0">
+							Please call or text <a href="tel:4022705543">402.270.5543</a>
+							to request information about our goats.
+						</p>
+					</div>
+				</template>
+				<template v-else>
+					<div class="row">
+						<div v-for="rec in catalog" class="col-12 col-md-6 mb-3">
+							<div class="card h-100">
+								<div class="ratio ratio-16x9">
+									<div class="text-center bg-dark">
+										<img :src="rec.uThumbnail" class="h-100">
+									</div>
+								</div>
+								<div class="card-body">
+									<div class="row">
+										<div class="col-8">
+											<h2 class="h3">{{ rec.uName }}</h2>
+											<span class="h5 mb-0">
+												<span class="badge bg-secondary me-2">{{ rec.uGender }}</span>
+												<span v-for="uBreedLabel in rec.uBreed.split('|')"
+													class="badge bg-secondary me-2">
+													{{ uBreedLabel }}
+												</span>
+											</span>
+										</div>
+										<div class="col-4 text-end">
+											<div class="text-primary h5 mb-3 d-none">${{ rec.uPrice }}</div>
+											<span class="fs-5 mb-0">
+												<a href="tel:4022705543" class="text-muted text-decoration-none me-2">
+													<i class="fas fa-square-phone fa-2x"></i>
+												</a>
+												<a :href="rec.uMailTo" class="text-muted text-decoration-none">
+													<i class="fas fa-square-envelope fa-2x"></i>
+												</a>
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</template>
+			</template>
+		</main>
+		<footer class="d-flex justify-content-center">
+			<section class="border-top border-primary p-2">
+				This &amp; That Farm, LLC.
+				&copy {{ (new Date()).getFullYear() }}.
+				All rights reserved.
+			</span>
+		</footer>
 	</section>
-	<main id="Goats" class="container">
-		<h2 class="border-bottom border-primary mb-3">Goats</h2>
-		<div id="ContainerCatalog" class="row">
-			<div class="col-12 text-center mb-3">
-				<div class="spinner-border text-secondary" role="status"></div>
-			</div>
-		</div>
-	</main>
-	<footer class="d-flex justify-content-center">
-		<section class="border-top border-primary p-2">
-			&copy 2023
-			This &amp; That Farm, LLC.
-			All rights reserved.
-		</span>
-	</footer>
 
-	<script id="TemplateCatalog" type="text/template">
-	<div class="col-12 text-left text-md-center">
-		<div class="alert alert-primary mb-3 lead">Our commercial goat herd is dewormed and current on all shots.</div>
-	{% if (data.catalog.length === 0) { %}
-		<div class="alert alert-primary">
-			<div class="text-center">
-				<i class="far fa-comments fa-6x fa-fw"></i>
-				<h2 class="my-3">Please Contact Us</h2>
-			</div>
-			<p>Sorry! None of our goats are listed online at this time.</p>
-			<p class="mb-0">
-				Please call or text <a href="tel:4022705543">402.270.5543</a>
-				to request information about our goats.
-			</p>
-		</div>
-	{% } %}
-	</div>
-
-	{% _.forEach(data.catalog, function (obj) { %}
-	<div class="col-12 col-md-6 mb-3">
-		<div class="card h-100">
-			<div class="ratio ratio-16x9">
-				<div class="text-center bg-dark">
-					<img src="/assets/catalog/{{ obj.uThumbnail }}" class="h-100">
-				</div>
-			</div>
-			<div class="card-body">
-				<div class="row">
-					<div class="col-8">
-						<h2 class="h3">{{ obj.uName }}</h2>
-						<span class="h5 mb-0">
-							<span class="badge bg-secondary me-2">{{ obj.uGender }}</span>
-							{% _.forEach(obj.uBreed.split("|"), function (uBreed) { %}
-							<span class="badge bg-secondary me-2">{{ uBreed }}</span>
-							{% }); %}
-						</span>
-					</div>
-					<div class="col-4 text-end">
-						<div class="text-primary h5 mb-3 d-none">${{ obj.uPrice.toFixed(2) }}</div>
-						<span class="fs-5 mb-0">
-							<a href="tel:4022705543" class="text-muted text-decoration-none me-2">
-								<i class="fas fa-phone"></i>
-							</a>
-							<a href="mailto:contact@thisthatfarm.com?subject=Infomation Request&body=I would like to know more about {{ obj.uName }}."
-								class="text-muted text-decoration-none">
-								<i class="fas fa-envelope fa-fw"></i>
-							</a>
-						</span>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	{% }); %}
-	</script>
-
-	<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js" integrity="sha256-qXBd/EfAdjOA2FGrGAG+b3YBn2tn5A6bhz+LSgYD96k=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue@3.2.47/dist/vue.global.js" integrity="sha256-SEFaVqz62jl2HdhvvjEoiNWtYPHc8ElRR0qO/uTORnk=" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/axios@1.3.4/dist/axios.min.js" integrity="sha256-EIyuZ2Lbxr6vgKrEt8W2waS6D3ReLf9aeoYPZ/maJPI=" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js" integrity="sha256-uOhwxdKyl3LxDJ+pppPIuJaqyFQO1nAePMYwTGg/69s=" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha256-lSABj6XYH05NydBq+1dvkMu6uiCc/MbLYOFGRkf3iQs=" crossorigin="anonymous"></script>
 	<script>
-		_.templateSettings = {
-			variable: "data", // avoid "with"
-			evaluate: /\{\%(.+?)\%\}/g, // evalutated delimiter: {% %}
-			escape: /\{\{(.+?)\}\}/g, // escape delimiter: {{ }}
-			interpolate: /\{\|(.+?)\|\}/g // unescaped delimiter: {| |}
-		};
-	</script>
-	<script>
 		(() => {
 			"use strict";
 
-			var DOM = {},
-				Bundle = {},
-				Template = {};
+			const vue = {};
+			vue.methods = {};
 
-			DOM.catalog = document.getElementById("ContainerCatalog");
+			vue.data = function() {
+				const data = {};
 
-			Bundle.catalog = [];
+				data.isLoading = false;
+				data.catalog = [];
 
-			document.addEventListener("DOMContentLoaded", () => {
-				Template.catalog = _.template(document.getElementById("TemplateCatalog").innerHTML);
+				return data;
+			};
 
+			vue.methods.clearCatalog = function () {
+				this.catalog = [];
+			};
+
+			vue.methods.fetchCatalog = function () {
+				this.clearCatalog();
+				this.isLoading = true;
 				axios
 					.get("/data/catalog.csv")
 					.then((response) => {
@@ -184,10 +184,21 @@
 					.then((parser) => {
 						if (parser?.errors?.length) return null;
 
-						Bundle.catalog = parser.data
+						this.catalog = parser.data
 							.map((rec) => {
 								rec.uIsAvailable = "TRUE" === rec.uIsAvailable;
-								rec.uPrice = parseFloat(rec.uPrice);
+								rec.uPrice = parseFloat(rec.uPrice)?.toFixed(2);
+								rec.uThumbnail = `/assets/catalog/${rec.uThumbnail}`;
+								rec.uMailTo = [
+									"mailto:contact@thisthatfarm.com",
+									`?subject=Inquiry about ${rec.uName}`,
+									`&body=I'm interested in knowing more about ${rec.uName}. `,
+									"Please send me any information that might be helpful in ",
+									"understanding its history and current condition. ",
+									"For example: age, breed, gender, vaccination status, ",
+									"overall health and behavior, or any other information ",
+									"that you feel is relevant.",
+								].join("");
 								return rec;
 							})
 							.filter((rec) => rec.uIsAvailable)
@@ -197,9 +208,22 @@
 									|| a.uName.localeCompare(b.uName);
 							});
 					})
-					.finally(function () {
-						DOM.catalog.innerHTML = Template.catalog({ catalog: Bundle.catalog });
+					.finally(() => {
+						this.isLoading = false;
 					});
+			};
+
+			vue.mounted = function () {
+				this.fetchCatalog();
+			};
+
+			document.addEventListener("DOMContentLoaded", () => {
+				Vue.createApp({
+					data: vue.data,
+					methods: vue.methods,
+					mounted: vue.mounted,
+				})
+				.mount("#App");
 			});
 		})();
 	</script>
